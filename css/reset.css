@@ -76,7 +76,8 @@ code, kbd, pre, samp {
 	display: none !important;
 }
 
-:focus {
+/* Preserve accessibility: only remove outline when focus is not focus-visible */
+:focus:not(:focus-visible) {
 	outline: none;
 }
 :focus-visible {
@@ -86,7 +87,7 @@ code, kbd, pre, samp {
 
 @media print {
 	* {
-		color-adjust: exact;
 		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
 	}
 }
